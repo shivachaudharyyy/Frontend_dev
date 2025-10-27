@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Magazine Layout</title>
+  <style>
+    body {
+      margin: 0;
+      background: #fdf6e3;
+      font-family: 'Georgia', serif;
+      padding: 2em;
+    }
+    h1 {
+      column-span: all;
+      font-size: 2em;
+      text-align: center;
+      margin-bottom: 1em;
+    }
+    .content {
+      column-count: 3;
+      column-gap: 2em;
+      text-align: justify;
+    }
+    img {
+      float: left;
+      margin: 0 1em 1em 0;
+      width: 150px;
+      border-radius: 10px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Inside the World of Web Design</h1>
+  <div class="content">
+    <img src="web.jpg" alt="Web Design">
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet.</p>
+    <p>Aliquam erat volutpat. Nulla facilisi. Donec nec eros eget nisl fringilla commodo. Morbi nec metus.</p>
+    <p>Praesent dapibus, neque id cursus faucibus, tortor neque egestas augue, eu vulputate magna eros eu erat.</p>
+    <p>Aliquam erat volutpat. Nam dui mi, tincidunt quis, accumsan porttitor, facilisis luctus, metus.</p>
+    <p>Phasellus ultrices nulla quis nibh. Quisque a lectus. Donec consectetuer ligula vulputate sem tristique cursus.</p>
+  </div>
+</body>
+</html>

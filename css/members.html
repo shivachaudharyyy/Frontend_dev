@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Our Team</title>
+  <style>
+    body { margin: 0; font-family: sans-serif; }
+    .team {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 1em;
+      padding: 2em;
+    }
+    .card {
+      flex: 1 1 300px;
+      max-width: 300px;
+      padding: 1em;
+      border: 2px solid #ccc;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      background: #fff;
+    }
+    .lead {
+      background: #f0f8ff;
+      border: 2px solid #0077cc;
+    }
+    @media (max-width: 600px) {
+      .team { flex-direction: column; align-items: center; }
+    }
+  </style>
+</head>
+<body>
+  <h1 style="text-align:center;">Meet the Team</h1>
+  <div class="team">
+    <div class="card lead">
+      <h2>Mayank Yadav</h2>
+      <p><strong>Team Lead</strong></p>
+      <p>Expert in web development and project strategy.</p>
+    </div>
+    <div class="card">
+      <h2>Riya Sharma</h2>
+      <p><strong>Designer</strong></p>
+      <p>Creates stunning UI/UX for all platforms.</p>
+    </div>
+    <div class="card">
+      <h2>Arjun Verma</h2>
+      <p><strong>Developer</strong></p>
+      <p>Builds robust backend systems and APIs.</p>
+    </div>
+  </div>
+</body>
+</html>
