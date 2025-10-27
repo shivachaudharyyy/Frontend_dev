@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form>
+  Username: <input type="text" required><br>
+  Password: <input type="password" required><br>
+  <!-- CSRF token helps prevent cross-site request forgery attacks -->
+  <input type="hidden" name="csrf_token" value="abc123xyz">
+  <button type="submit">Login</button>
+</form>
+</body>
+</html>
