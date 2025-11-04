@@ -1,0 +1,202 @@
+/* q3-fancy.css */
+
+/* 🌐 GLOBAL RESET */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  font-family: 'Poppins', 'Segoe UI', Roboto, system-ui, sans-serif;
+  color: #222;
+  background: linear-gradient(135deg, #e3f2fd, #fce4ec, #f3e5f5);
+  background-size: 200% 200%;
+  animation: gradientShift 10s ease infinite;
+  transition: background 0.5s ease;
+}
+
+/* 🌈 HEADER */
+.header {
+  background: linear-gradient(90deg, #4b6ef5, #8e24aa, #ff4081);
+  color: #fff;
+  padding: 1rem 2rem;
+  box-shadow: 0 3px 12px rgba(0, 0, 0, 0.1);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.nav a {
+  text-decoration: none;
+  color: #fff;
+  font-weight: 500;
+  font-size: 1rem;
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+.nav a::after {
+  content: "";
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 0%;
+  height: 2px;
+  background: #fff;
+  transition: width 0.3s ease;
+}
+
+.nav a:hover {
+  color: #ffeb3b;
+}
+
+.nav a:hover::after {
+  width: 100%;
+}
+
+/* 🧭 MAIN SECTION */
+.main {
+  display: flex;
+  gap: 1.5rem;
+  padding: 2.5rem;
+  flex: 1;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  animation: fadeIn 1s ease-in-out;
+}
+
+/* ✨ BOX STYLING */
+.box {
+  flex: 1;
+  min-height: 220px;
+  background: linear-gradient(135deg, #ffffff, #f3f3f3);
+  border-radius: 16px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.35s ease;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.05);
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #333;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Hover effects: 3D + color pulse */
+.box:hover {
+  transform: rotate(2deg) scale(1.05);
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.12);
+}
+
+.box::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(75, 110, 245, 0.1), rgba(255, 64, 129, 0.1));
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+.box:hover::before {
+  opacity: 1;
+}
+
+/* 🦋 Subtle floating animation */
+.box {
+  animation: floaty 5s ease-in-out infinite;
+}
+
+/* 🎨 Random pastel background colors */
+.box:nth-child(1) {
+  background: linear-gradient(145deg, #bbdefb, #e3f2fd);
+}
+.box:nth-child(2) {
+  background: linear-gradient(145deg, #f8bbd0, #fce4ec);
+}
+.box:nth-child(3) {
+  background: linear-gradient(145deg, #c8e6c9, #e8f5e9);
+}
+.box:nth-child(4) {
+  background: linear-gradient(145deg, #fff9c4, #fffde7);
+}
+
+/* 📞 FOOTER */
+.footer {
+  background: linear-gradient(90deg, #8e24aa, #4b6ef5, #00bcd4);
+  padding: 1.25rem;
+  text-align: center;
+  color: #fff;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.08);
+}
+
+/* 🌈 ANIMATIONS */
+@keyframes gradientShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes floaty {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-6px); }
+}
+
+/* 📱 RESPONSIVE DESIGN */
+
+/* Tablets */
+@media (max-width: 900px) {
+  .main {
+    padding: 2rem;
+    gap: 1rem;
+  }
+  .nav {
+    gap: 1.25rem;
+  }
+  .box {
+    min-height: 180px;
+    font-size: 1rem;
+  }
+}
+
+/* Mobiles */
+@media (max-width: 700px) {
+  .main {
+    flex-direction: column;
+    padding: 1.5rem;
+  }
+  .box {
+    width: 100%;
+    max-width: 400px;
+    border-radius: 20px;
+  }
+  .nav {
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+  .footer {
+    font-size: 0.9rem;
+  }
+}

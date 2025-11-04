@@ -1,0 +1,140 @@
+/* pricingsection.css */
+
+/* 🌐 Global Reset */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Poppins', 'Segoe UI', Roboto, system-ui, sans-serif;
+  background: linear-gradient(135deg, #e3f2fd, #fce4ec, #f3e5f5);
+  background-size: 200% 200%;
+  animation: bgShift 10s ease infinite;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  color: #222;
+}
+
+/* 💎 Pricing Section */
+.pricing {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  width: 90%;
+  max-width: 900px;
+  text-align: center;
+  animation: fadeIn 0.8s ease-in-out;
+}
+
+/* 🧭 Card Styling */
+.card {
+  background: #fff;
+  border-radius: 16px;
+  padding: 2.5rem 1.5rem;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: #333;
+  transition: all 0.4s ease;
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+/* Soft pastel gradient borders */
+.card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 16px;
+  padding: 2px;
+  background: linear-gradient(135deg, #4b6ef5, #ff5fa2, #00e5ff);
+  -webkit-mask: 
+    linear-gradient(#fff 0 0) content-box, 
+    linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+          mask-composite: exclude;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+.card:hover::before {
+  opacity: 1;
+}
+
+/* Card hover animation */
+.card:hover {
+  transform: translateY(-10px) scale(1.05);
+  box-shadow: 0 16px 32px rgba(0, 0, 0, 0.12);
+}
+
+/* 💰 Price styling */
+.price {
+  display: block;
+  margin-top: 1rem;
+  font-size: 2.2rem;
+  font-weight: 700;
+  background: linear-gradient(90deg, #4b6ef5, #ff5fa2);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* 🌟 Featured (Pro) Plan */
+.featured {
+  background: linear-gradient(145deg, #4b6ef5, #5c84ff, #7986ff);
+  color: #fff;
+  transform: scale(1.1);
+  box-shadow: 0 12px 32px rgba(75, 110, 245, 0.4);
+  border: none;
+}
+
+.featured .price {
+  background: linear-gradient(90deg, #fff, #ffeb3b);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Add subtle glowing ring to featured */
+.featured::before {
+  opacity: 1;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.3), rgba(255, 255, 0, 0.4));
+}
+
+/* 🌈 Animations */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes bgShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* 📱 Responsive Design */
+@media (max-width: 900px) {
+  .pricing {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .pricing {
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+  }
+
+  .card {
+    padding: 2rem 1.25rem;
+    font-size: 1.2rem;
+  }
+
+  .featured {
+    transform: scale(1.05);
+  }
+}

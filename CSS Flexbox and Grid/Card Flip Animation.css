@@ -1,0 +1,56 @@
+/* q9.css */
+body {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #e0f2fe;
+  font-family: Arial, sans-serif;
+}
+
+.container {
+  perspective: 1000px;
+}
+
+.card {
+  width: 250px;
+  height: 200px;
+  position: relative;
+  transform-style: preserve-3d;
+  transition: transform 0.8s;
+  cursor: pointer;
+}
+
+.card:hover {
+  transform: rotateY(180deg);
+}
+
+.front, .back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+}
+
+.front {
+  background: #3b82f6;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.front img {
+  border-radius: 8px;
+  margin-top: 10px;
+}
+
+.back {
+  background: white;
+  color: #333;
+  padding: 20px;
+  transform: rotateY(180deg);
+}
