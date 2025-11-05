@@ -1,0 +1,96 @@
+/* Reset & Base */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  background: #f9fafb;
+  padding: 2rem;
+  margin: 0;
+}
+
+/* Button Container */
+.button-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Base Button Style */
+.btn {
+  padding: 0.75rem 1.5rem;
+  border-radius: 8px;
+  border: none;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+}
+
+/* Primary Button */
+.btn-primary {
+  background: #007bff;
+  color: #fff;
+}
+.btn-primary:hover {
+  background: #0069d9;
+  box-shadow: 0 4px 12px rgba(0,123,255,0.4);
+}
+.btn-primary:active {
+  transform: scale(0.97);
+}
+
+/* Secondary Button */
+.btn-secondary {
+  background: #6c757d;
+  color: #fff;
+}
+.btn-secondary:hover {
+  background: #5a6268;
+  box-shadow: 0 4px 12px rgba(108,117,125,0.4);
+}
+.btn-secondary:active {
+  transform: scale(0.97);
+}
+
+/* Outline Button */
+.btn-outline {
+  background: transparent;
+  border: 2px solid #007bff;
+  color: #007bff;
+  box-shadow: none;
+}
+.btn-outline:hover {
+  background: #007bff;
+  color: #fff;
+  box-shadow: 0 4px 12px rgba(0,123,255,0.4);
+}
+.btn-outline:active {
+  transform: scale(0.97);
+}
+
+/* Disabled Button */
+.btn:disabled,
+.btn.disabled {
+  background: #e0e0e0;
+  color: #999;
+  cursor: not-allowed;
+  box-shadow: none;
+  border: none;
+}
+
+/* Focus State */
+.btn:focus {
+  outline: 3px solid rgba(0,123,255,0.4);
+  outline-offset: 2px;
+}
+
+/* Add a subtle transition on hover/focus/active */
+.btn:hover,
+.btn:focus {
+  transition: all 0.25s ease;
+}

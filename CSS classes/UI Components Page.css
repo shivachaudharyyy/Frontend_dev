@@ -1,0 +1,23 @@
+/* q7.css - UI Components */
+/* Card-like container using Flexbox */
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:Inter,Arial;background:linear-gradient(180deg,#f6fbff,#eef7ff); display:flex;align-items:center;justify-content:center;height:100vh}
+.card{ width:360px; background:#fff; border-radius:14px; padding:18px; box-shadow:0 16px 36px rgba(3,37,65,0.06); border:1px solid rgba(11,110,253,0.04); }
+.card header h1{ font-size:1.1rem; color:#0b6efd; margin-bottom:12px; }
+
+/* controls layout */
+.controls{ display:flex; flex-direction:column; gap:12px; align-items:stretch; }
+input[type="search"]{ padding:10px 12px; border-radius:10px; border:1px solid #e6eef6; }
+input[type="search"]:focus{ outline:none; box-shadow:0 8px 20px rgba(11,110,253,0.08); border-color:#0b6efd; }
+
+/* buttons */
+.btns{ display:flex; gap:10px; }
+button{ padding:10px 12px; border-radius:10px; border:1px solid transparent; cursor:pointer; }
+button.primary{ background:#0b6efd; color:#fff; }
+button.ghost{ background:transparent; border:1px solid #e6eef6; }
+
+/* select */
+.dropdown select{ padding:10px; border-radius:8px; border:1px solid #e6eef6; width:100%; }
+
+/* focus & hover highlight */
+button:focus, .dropdown select:focus{ outline:3px solid rgba(11,110,253,0.12); outline-offset:4px; }

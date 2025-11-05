@@ -1,0 +1,24 @@
+/* q9.css - Combined Effects */
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:Inter,Arial;background:linear-gradient(180deg,#fbfdff,#eef7ff); padding:28px; color:#0b1220}
+.examples{ display:flex; gap:18px; justify-content:center; align-items:center; flex-wrap:wrap; margin-top:20px; }
+
+/* base interactive element */
+.cbtn, .cbox{
+  padding:12px 18px; border-radius:12px; border:1px solid transparent; background:#fff; text-decoration:none; color:#0b1220;
+  box-shadow:0 10px 24px rgba(3,37,65,0.06); transition: all .25s cubic-bezier(.2,.9,.3,1);
+}
+
+/* on hover: grow + color change + subtle shadow */
+.cbtn:hover{ transform:scale(1.06) translateY(-6px); box-shadow:0 22px 46px rgba(3,37,65,0.12); background:#0b6efd; color:#fff; }
+.cbtn:active{ transform:scale(1.02) translateY(-2px); }
+
+/* special shows combined transform + rotate */
+.cbtn.special:hover{ transform:scale(1.08) translateY(-8px) rotate(-2deg); background:linear-gradient(90deg,#06b6d4,#0b6efd); color:#fff; }
+
+/* card link with transform on hover */
+.cbox{ display:inline-flex; align-items:center; padding:14px 18px; border-radius:14px; }
+.cbox:hover{ transform:translateY(-8px); box-shadow:0 30px 60px rgba(3,37,65,0.14); background:#fffaf3; border-color:#ffd7a6; }
+
+/* accessible focus */
+.cbtn:focus, .cbox:focus{ outline:3px solid rgba(11,110,253,0.12); outline-offset:4px; }

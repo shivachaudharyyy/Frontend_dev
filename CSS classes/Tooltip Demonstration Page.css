@@ -1,0 +1,49 @@
+/* q2.css - Tooltip Demo */
+/* Center items using Flexbox */
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:Inter,Arial;background:linear-gradient(180deg,#fbfdff,#eef7ff); color:#0b1220;height:100vh; display:flex; align-items:center; justify-content:center;}
+.center{ text-align:center; }
+
+.icons{
+  display:flex; gap:28px; align-items:center; justify-content:center;
+  margin-top:12px;
+}
+
+/* tooltip wrapper */
+.tip{ position:relative; display:inline-flex; align-items:center; justify-content:center; }
+
+/* target styling */
+.target{
+  display:inline-block; font-size:28px; padding:12px; border-radius:10px; background:#fff;
+  box-shadow:0 8px 18px rgba(10,20,60,0.06); cursor:default;
+}
+
+/* tooltip (initially hidden) */
+.tooltip{
+  position:absolute;
+  bottom:calc(100% + 10px); /* above the target */
+  left:50%; transform:translateX(-50%) translateY(8px);
+  background:#0b6efd; color:#fff; padding:8px 10px; border-radius:8px;
+  white-space:nowrap; font-size:.9rem; pointer-events:none;
+  opacity:0; transition:opacity .3s ease-in-out, transform .3s ease-in-out;
+  box-shadow:0 10px 20px rgba(11,110,253,0.18);
+  z-index:20;
+}
+
+/* small arrow using pseudo-element */
+.tooltip::after{
+  content:''; position:absolute; top:100%; left:50%; transform:translateX(-50%);
+  width:8px; height:8px; background:#0b6efd; transform:translateX(-50%) rotate(45deg);
+}
+
+/* show tooltip on hover of parent */
+.tip:hover .tooltip,
+.tip:focus-within .tooltip{
+  opacity:1; transform:translateX(-50%) translateY(0);
+}
+
+/* responsive */
+@media (max-width:520px){
+  .icons{ gap:14px; }
+  .target{ font-size:22px; padding:10px; }
+}

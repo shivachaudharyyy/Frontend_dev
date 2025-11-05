@@ -1,0 +1,23 @@
+/* q4.css - Selectors Practice */
+/* Element selector: styles all paragraphs */
+p{ color:#0b1220; line-height:1.6; }
+
+/* Class selector */
+.highlight{ background:#fff4e6; padding:8px; border-radius:8px; }
+
+/* ID selector (more specific) */
+#unique{ border-left:4px solid #06b6d4; padding:8px; }
+
+/* Attribute selector: links starting with https */
+a[href^="https"]{ color:#0b6efd; font-weight:600; text-decoration:none; }
+
+/* Child combinator: .box > p applies only to direct children */
+.box > p{ background:#f2f9ff; margin:6px 0; padding:8px; border-radius:6px; }
+
+/* Adjacent sibling combinator + (if a p is immediately after another) */
+.box p + p{ border-top:1px dashed rgba(11,110,253,0.08); }
+
+/* General sibling ~ (all following siblings) */
+.box p.general{ opacity:0.95; }
+
+/* Comments above explain the selector purpose */
