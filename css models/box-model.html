@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Box Model Exploration</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f4f4f4;
+      margin: 0;
+      padding: 40px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    h1 {
+      margin-bottom: 30px;
+    }
+
+    .container {
+      display: flex;
+      gap: 40px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .box-wrapper {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      max-width: 300px;
+    }
+
+    .box {
+      margin: 20px;
+      padding: 20px;
+      border: 10px solid #3498db;
+      background-color: #fff;
+      outline: 2px dashed #e67e22;
+      box-shadow: 0 0 0 20px #ecf0f1; /* Simulates margin layer */
+      width: 200px;
+      height: 100px;
+      box-sizing: content-box;
+    }
+
+    .box-border-box {
+      margin: 20px;
+      padding: 20px;
+      border: 10px solid #2ecc71;
+      background-color: #fff;
+      outline: 2px dashed #9b59b6;
+      box-shadow: 0 0 0 20px #ecf0f1;
+      width: 200px;
+      height: 100px;
+      box-sizing: border-box;
+    }
+
+    .description {
+      text-align: center;
+      font-size: 0.95em;
+      color: #555;
+      margin-top: 10px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Box Model Exploration</h1>
+  <div class="container">
+    <div class="box-wrapper">
+      <div class="box">Content Box</div>
+      <div class="description">
+        <strong>Default box-sizing:</strong> Content + Padding + Border = Total size.<br>
+        Margin simulated with outer shadow.<br>
+        Outline shows padding edge.
+      </div>
+    </div>
+    <div class="box-wrapper">
+      <div class="box-border-box">Border Box</div>
+      <div class="description">
+        <strong>box-sizing: border-box;</strong> Total size includes padding & border.<br>
+        Easier for layout control.<br>
+        Outline shows padding edge.
+      </div>
+    </div>
+  </div>
+</body>
+</html>

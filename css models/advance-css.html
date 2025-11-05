@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Advanced CSS Selectors Demo</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 40px;
+      background: #f9f9f9;
+    }
+
+    h1 {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    /* Attribute selector: input[type="text"] */
+    input[type="text"] {
+      border: 2px solid #3498db;
+      padding: 8px;
+      margin-bottom: 20px;
+    }
+
+    /* Attribute selector: links starting with https */
+    a[href^="https"] {
+      color: green;
+      font-weight: bold;
+    }
+
+    /* Pseudo-class: :hover */
+    li:hover {
+      background-color: #eee;
+    }
+
+    /* Pseudo-class: :focus */
+    input:focus {
+      outline: 2px solid #e67e22;
+    }
+
+    /* Pseudo-class: :nth-child(odd) */
+    ul li:nth-child(odd) {
+      background-color: #f0f0f0;
+    }
+
+    /* Pseudo-element: ::before */
+    li::before {
+      content: "👉 ";
+      color: #888;
+    }
+
+    /* Pseudo-element: ::after */
+    li::after {
+      content: " ✔";
+      color: #2ecc71;
+    }
+
+    /* Combinator: direct child > */
+    .card > p {
+      color: #34495e;
+      font-weight: bold;
+    }
+
+    /* Combinator: adjacent sibling + */
+    h2 + p {
+      font-style: italic;
+      color: #555;
+    }
+
+    /* Combinator: general sibling ~ */
+    h3 ~ p {
+      background-color: #e0f7fa;
+      padding: 5px;
+    }
+
+    /* Combinator: descendant */
+    .container ul li {
+      padding: 5px;
+      border-bottom: 1px solid #ccc;
+    }
+  </style>
+</head>
+<body>
+  <h1>Advanced CSS Selectors Demo</h1>
+
+  <input type="text" placeholder="Type something..." />
+
+  <p>Visit <a href="https://example.com">Secure Link</a> or <a href="http://example.com">Non-Secure Link</a></p>
+
+  <div class="container">
+    <ul>
+      <li>First item</li>
+      <li>Second item</li>
+      <li>Third item</li>
+      <li>Fourth item</li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <p>This is a direct child paragraph inside .card</p>
+    <div>
+      <p>This nested paragraph won't be styled by the > selector</p>
+    </div>
+  </div>
+
+  <h2>Heading 2</h2>
+  <p>Styled by adjacent sibling (+) selector</p>
+
+  <h3>Heading 3</h3>
+  <p>Styled by general sibling (~) selector</p>
+  <p>Another sibling paragraph</p>
+</body>
+</html>

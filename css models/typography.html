@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Typography & Text Styling</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: #fdfdfd;
+      padding: 40px;
+      color: #333;
+    }
+
+    h1 {
+      text-align: center;
+      font-size: 2.5em;
+      margin-bottom: 30px;
+      font-family: 'Georgia', serif;
+    }
+
+    article {
+      max-width: 800px;
+      margin: auto;
+      font-size: 1.1em;
+      line-height: 1.8;
+      letter-spacing: 0.5px;
+      text-align: justify;
+      position: relative;
+    }
+
+    /* Pseudo-elements for emphasis */
+    article::first-letter {
+      font-size: 2.5em;
+      font-weight: bold;
+      color: #3498db;
+      float: left;
+      margin-right: 8px;
+      line-height: 1;
+    }
+
+    article::first-line {
+      font-weight: 600;
+      color: #2c3e50;
+    }
+
+    /* Custom styles for semantic tags */
+    mark {
+      background-color: #ffeaa7;
+      color: #d35400;
+      font-weight: bold;
+    }
+
+    strong {
+      color: #c0392b;
+    }
+
+    em {
+      color: #8e44ad;
+      font-style: italic;
+    }
+
+    /* Font family and weight demo */
+    .font-demo {
+      margin-top: 40px;
+    }
+
+    .font-demo p {
+      margin: 10px 0;
+    }
+
+    .serif {
+      font-family: 'Times New Roman', serif;
+      font-weight: 400;
+    }
+
+    .sans {
+      font-family: 'Arial', sans-serif;
+      font-weight: 600;
+    }
+
+    .mono {
+      font-family: 'Courier New', monospace;
+      font-weight: 700;
+    }
+  </style>
+</head>
+<body>
+  <h1>Typography & Text Styling</h1>
+
+  <article>
+    Typography plays a crucial role in web design. It affects readability, tone, and user engagement. <mark>Good typography</mark> balances aesthetics with clarity. Designers often use <strong>font weight</strong> and <em>emphasis</em> to guide attention and create hierarchy. This article demonstrates how to style text using various CSS properties to enhance visual appeal and legibility.
+  </article>
+
+  <div class="font-demo">
+    <p class="serif">This is a serif font (Times New Roman) with normal weight.</p>
+    <p class="sans">This is a sans-serif font (Arial) with semi-bold weight.</p>
+    <p class="mono">This is a monospace font (Courier New) with bold weight.</p>
+  </div>
+</body>
+</html>

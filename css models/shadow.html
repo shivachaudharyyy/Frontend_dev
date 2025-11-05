@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Shadows & Depth Demo</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 40px;
+      font-family: 'Segoe UI', sans-serif;
+      background: #f0f0f0;
+    }
+
+    h1 {
+      text-align: center;
+      margin-bottom: 40px;
+      font-size: 2.5em;
+      color: #333;
+      text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+    }
+
+    .container {
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      flex-wrap: wrap;
+    }
+
+    .card {
+      width: 250px;
+      height: 180px;
+      background: white;
+      border-radius: 10px;
+      padding: 20px;
+      transition: box-shadow 0.4s ease, transform 0.4s ease;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      font-weight: bold;
+      text-align: center;
+    }
+
+    .card1 {
+      box-shadow: 2px 2px 6px rgba(0,0,0,0.2);
+    }
+
+    .card2 {
+      box-shadow: 4px 4px 12px rgba(0,0,0,0.3);
+    }
+
+    .card3 {
+      box-shadow: 6px 6px 20px rgba(0,0,0,0.4);
+    }
+
+    .card:hover {
+      box-shadow: 8px 8px 30px rgba(0,0,0,0.5);
+      transform: translateY(-10px);
+    }
+  </style>
+</head>
+<body>
+  <h1>Shadows & Depth Demo</h1>
+  <div class="container">
+    <div class="card card1">Card 1<br>Light Shadow</div>
+    <div class="card card2">Card 2<br>Medium Shadow</div>
+    <div class="card card3">Card 3<br>Deep Shadow</div>
+  </div>
+</body>
+</html>

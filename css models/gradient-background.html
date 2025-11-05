@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Gradient Background Demo</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+    }
+
+    header, footer {
+      position: fixed;
+      left: 0;
+      right: 0;
+      height: 60px;
+      background-color: #333;
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 1000;
+    }
+
+    header {
+      top: 0;
+    }
+
+    footer {
+      bottom: 0;
+    }
+
+    .section {
+      min-height: 100vh;
+      padding: 80px 20px 80px; /* space for header and footer */
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      color: white;
+      font-size: 1.5em;
+    }
+
+    .linear {
+      background: linear-gradient(to right, #ff7e5f, #feb47b);
+    }
+
+    .radial {
+      background: radial-gradient(circle, #6a11cb, #2575fc);
+      background-attachment: fixed;
+    }
+  </style>
+</head>
+<body>
+  <header>Fixed Header</header>
+
+  <div class="section linear">
+    <div>🌅 This section uses a <strong>linear gradient</strong> background.</div>
+  </div>
+
+  <div class="section radial">
+    <div>🎯 This section uses a <strong>radial gradient</strong> with <code>background-attachment: fixed</code> for a parallax-like effect.</div>
+  </div>
+
+  <footer>Fixed Footer</footer>
+</body>
+</html>
