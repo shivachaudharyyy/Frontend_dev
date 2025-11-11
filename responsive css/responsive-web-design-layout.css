@@ -1,0 +1,21 @@
+/* Responsive Web Design Layout using Flexbox */
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:system-ui,Segoe UI,Arial;padding:20px;display:flex;flex-direction:column;min-height:100vh}
+.site-header{display:flex;justify-content:space-between;align-items:center;padding:12px 0}
+.logo{font-weight:700;font-size:1.25rem}
+.main-nav a{margin-left:18px;text-decoration:none;color:#111}
+
+
+.features{display:flex;gap:20px;margin-top:20px}
+.feature{flex:1;padding:20px;border-radius:10px;background:#f7f7f7;text-align:center;transition:transform 250ms ease}
+.feature:hover{transform:scale(1.03)}
+
+
+.site-footer{text-align:center;margin-top:auto;padding:18px 0;color:#555}
+
+
+/* Stack features vertically below 750px */
+@media (max-width:750px){
+.features{flex-direction:column}
+.main-nav{display:flex}
+}

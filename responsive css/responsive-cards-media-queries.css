@@ -1,0 +1,16 @@
+/* Cards layout with media queries */
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:system-ui;padding:24px}
+.cards-wrapper{display:flex;gap:20px;flex-wrap:wrap}
+.card{flex:1 1 calc(25% - 20px);background:#fff;padding:18px;border-radius:8px;box-shadow:0 2px 6px rgba(0,0,0,0.06);text-align:center;transition:background 200ms ease}
+.card:hover{background:#eef}
+
+
+/* Tablet: 2 columns (max-width 900px) */
+@media (max-width:900px){
+.card{flex:1 1 calc(50% - 20px)}
+}
+/* Mobile: 1 column (max-width 600px) */
+@media (max-width:600px){
+.card{flex:1 1 100%}
+}

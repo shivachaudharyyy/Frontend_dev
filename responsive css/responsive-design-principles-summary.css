@@ -1,0 +1,7 @@
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:system-ui,Arial;padding:24px;background:#f7f9fb}
+.principles{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.box{background:#fff;padding:16px;border-radius:10px;box-shadow:0 2px 6px rgba(0,0,0,0.05);transition:all 0.4s ease}
+.box:hover{background:linear-gradient(135deg,#66b2ff,#c2e9fb);color:#fff}
+pre{background:#f1f1f1;padding:6px;border-radius:6px;margin-top:8px;font-family:monospace}
+@media(max-width:600px){.principles{grid-template-columns:1fr}}
