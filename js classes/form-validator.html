@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form id="studentForm">
+  <input type="text" id="name" placeholder="Name">
+  <span id="nameError"></span><br>
+  <input type="email" id="email" placeholder="Email">
+  <span id="emailError"></span><br>
+  <input type="text" id="phone" placeholder="Phone">
+  <span id="phoneError"></span><br>
+  <input type="password" id="password" placeholder="Password">
+  <span id="passwordError"></span><br>
+  <button type="submit">Register</button>
+</form>
+
+<script>
+document.getElementById("studentForm").addEventListener("submit", function(e){
+  e.preventDefault();
+
+  const name = document.getElementById("name");
+  const email = document.getElementById("email");
+  const phone = document.getElementById("phone");
+  const password = document.getElementById("password");
+
+  const nameRegex = /^[A-Za-z]+$/;
+  const emailRegex = /^[^@]+@[^@]+\.[^@]+$/;
+  const phoneRegex = /^\d{10}$/;
+  const passwordRegex = /^(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&]).{6,}$/;
+
+  function validate(field, regex, errorId, msg){
+    if(!regex.test(field.value)){
+      field.style.border = "2px solid red";
+      document.getElementById(errorId).innerText = msg;
+    } else {
+      field.style.border = "2px solid green";
+      document.getElementById(errorId).innerText = "";
+    }
+  }
+
+  validate(name, nameRegex, "nameError", "Name must be alphabets only");
+  validate(email, emailRegex, "emailError", "Invalid email format");
+  validate(phone, phoneRegex, "phoneError", "Phone must be 10 digits");
+  validate(password, passwordRegex, "passwordError", "Password must contain uppercase, number & special char");
+});
+</script>
+</body>
+</html>

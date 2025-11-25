@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Shopping Cart</title>
+</head>
+<body>
+  <div id="cartOutput"></div>
+  <input type="text" id="coupon" placeholder="Enter Coupon (SAVE20 / DISC10)">
+  <button onclick="applyCoupon()">Apply Coupon</button>
+  <h3 id="finalTotal"></h3>
+
+  <script>
+    class Cart {
+      constructor() {
+        this.items = [];
+        this.discount = 0;
+      }
+
+      addItem(name, price, quantity) {
+        this.items.push({ name, price, quantity });
+      }
+
+      getTotal() {
+        return this.items.reduce((sum, item) => sum + item.price * item.quantity, 0);
+      }
+
+      applyCoupon(code) {
+        const regex = /^(SAVE|DISC)(\d{1,2})$/;
+        const match = code.match(regex);
+        if (match) {
+          this.discount = parseInt(match[2]);
+          return true;
+        }
+        return false;
+      }
+
+      getFinalTotal() {
+        const total = this.getTotal();
+        return total - (total * this.discount / 100);
+      }
+    }
+
+    // Example usage
+    const cart = new Cart();
+    cart.addItem("Laptop", 50000, 1);
+    cart.addItem("Shoes", 2000, 2);
+    cart.addItem("Book", 500, 3);
+
+    document.getElementById("cartOutput").innerText = 
+      "Cart Items:\n" + cart.items.map(i => `${i.name} - ₹${i.price} x ${i.quantity}`).join("\n") +
+      "\nTotal: ₹" + cart.getTotal();
+
+    function applyCoupon() {
+      const code = document.getElementById("coupon").value;
+      if(cart.applyCoupon(code)){
+        document.getElementById("finalTotal").innerText = 
+          `Coupon Applied (${cart.discount}% off). Final Total: ₹${cart.getFinalTotal()}`;
+      } else {
+        document.getElementById("finalTotal").innerText = "Invalid Coupon!";
+      }
+    }
+  </script>
+</body>
+</html>

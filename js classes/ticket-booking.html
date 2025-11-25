@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form id="ticketForm">
+  <input type="text" id="name" placeholder="Name"><br>
+  <input type="email" id="email" placeholder="Email"><br>
+  <input type="number" id="seats" placeholder="Seats (1-10)"><br>
+  <button type="submit">Book Ticket</button>
+</form>
+<div id="ticketDetails"></div>
+
+<script>
+document.getElementById("ticketForm").addEventListener("submit", function(e){
+  e.preventDefault();
+  const name = document.getElementById("name").value;
+  const email = document.getElementById("email").value;
+  const seats = parseInt(document.getElementById("seats").value);
+
+  const nameRegex = /^[A-Za-z]+$/;
+  const emailRegex = /^[^@]+@[^@]+\.[^@]+$/;
+
+  if(nameRegex.test(name) && emailRegex.test(email) && seats >=1 && seats <=10){
+    const booking = { name, email, seats };
+    document.getElementById("ticketDetails").innerText = 
+      `Ticket Booked: ${booking.name}, ${booking.email}, Seats: ${booking.seats}`;
+  } else {
+    alert("Invalid input!");
+  }
+});
+</script>t
+</body>
+</html>
